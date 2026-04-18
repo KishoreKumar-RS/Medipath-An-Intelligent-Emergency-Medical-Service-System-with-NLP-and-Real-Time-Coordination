@@ -1,0 +1,949 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  color: #333;
+}
+
+.medical-app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Styles */
+.app-header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 0.6rem 1.5rem;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #667eea;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.tagline {
+  color: #666;
+  font-style: italic;
+  white-space: nowrap;
+  font-size: 0.8rem;
+}
+
+/* Compact Horizontal Nav Menu */
+.nav-menu {
+  display: flex;
+  gap: 0.3rem;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-btn {
+  padding: 0.5rem 0.8rem;
+  border: none;
+  background: transparent;
+  border-radius: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  color: #666;
+  white-space: nowrap;
+  font-size: 0.8rem;
+  min-width: 70px;
+  text-align: center;
+}
+
+.nav-btn:hover, .nav-btn.active {
+  background: #667eea;
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* Auth Section */
+.auth-section {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 0.3rem;
+  flex-wrap: nowrap;
+}
+
+.login-btn, .register-btn {
+  padding: 0.5rem 0.8rem;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  font-size: 0.8rem;
+  min-width: 70px;
+  text-align: center;
+}
+
+.login-btn {
+  background: transparent;
+  border: 1.5px solid #667eea;
+  color: #667eea;
+}
+
+.register-btn {
+  background: #667eea;
+  color: white;
+}
+
+.login-btn:hover, .register-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #333;
+  white-space: nowrap;
+  font-size: 0.8rem;
+}
+
+.logout-btn {
+  padding: 0.4rem 0.8rem;
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 0.75rem;
+}
+
+.logout-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  width: 100%;
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 1.5rem 0;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  margin-top: 1rem;
+}
+
+.hero-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 0.8rem;
+  color: #000000;
+  font-weight: 700;
+}
+
+.hero-section p {
+  font-size: 1.1rem;
+  color: #000000;
+  margin-bottom: 1rem;
+  background: transparent;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+/* Emergency Notice */
+.emergency-notice {
+  background: rgba(255, 193, 7, 0.2);
+  border: 2px solid #ffc107;
+  border-radius: 10px;
+  padding: 0.8rem;
+  margin: 0.8rem auto;
+  max-width: 500px;
+  text-align: center;
+  color: #000000;
+}
+
+.emergency-notice strong {
+  color: #000000;
+  font-weight: 700;
+}
+
+.emergency-badge {
+  font-size: 1.3rem;
+  margin-right: 0.5rem;
+}
+
+/* Language Selector */
+.language-selector {
+  background: white;
+  padding: 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.language-selector label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  margin-right: 0.8rem;
+}
+
+.language-selector select {
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+  border: 2px solid #e1e5e9;
+  font-size: 0.95rem;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 140px;
+}
+
+.language-selector select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Symptom Section */
+.symptom-section {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.section-header h3 {
+  color: #333;
+  font-size: 1.3rem;
+}
+
+/* DEBUGGED Symptom Input - SIMPLIFIED */
+.symptom-input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e1e5e9;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: inherit;
+  margin-bottom: 15px;
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.5;
+  box-sizing: border-box;
+  display: block;
+  background: white;
+  transition: border-color 0.3s ease;
+}
+
+.symptom-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.symptom-input::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+/* Voice Recognition */
+.voice-section {
+  background: #f8f9fa;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 2px dashed #dee2e6;
+}
+
+.voice-section h4 {
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.voice-controls {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.voice-btn {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 18px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 0.85rem;
+}
+
+.voice-btn.start {
+  background: #28a745;
+  color: white;
+}
+
+.voice-btn.stop {
+  background: #dc3545;
+  color: white;
+}
+
+.voice-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.listening-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.4rem;
+  color: #dc3545;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.pulse {
+  width: 10px;
+  height: 10px;
+  background: #dc3545;
+  border-radius: 50%;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Symptom Guidelines */
+.symptom-guidelines {
+  background: #f8f9fa;
+  padding: 1.2rem;
+  border-radius: 8px;
+  margin: 0.8rem 0;
+  border-left: 4px solid #dc3545;
+}
+
+.symptom-guidelines h4 {
+  color: #dc3545;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+}
+
+.critical-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.critical-tag {
+  background: #dc3545;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 16px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Button Section */
+.button-section {
+  text-align: center;
+}
+
+.search-button {
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.search-button:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.search-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Hospital Results */
+.hospital-results {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  margin-top: 1.5rem;
+}
+
+.results-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.hospital-results h3 {
+  color: #333;
+  margin-bottom: 1.2rem;
+  font-size: 1.3rem;
+}
+
+.emergency-alert {
+  background: #dc3545;
+  color: white;
+  padding: 0.8rem;
+  border-radius: 6px;
+  text-align: center;
+  margin: 0.8rem 0;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.hospital-list, .hospital-grid {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.hospital-list {
+  grid-template-columns: 1fr;
+}
+
+.hospital-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.hospital-card {
+  border: 2px solid #e1e5e9;
+  padding: 1.2rem;
+  border-radius: 10px;
+  background: #f8f9fa;
+  transition: all 0.3s ease;
+}
+
+.hospital-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  border-color: #667eea;
+}
+
+.hospital-card h4 {
+  color: #333;
+  margin-bottom: 0.4rem;
+  font-size: 1.2rem;
+}
+
+.specialization {
+  color: #667eea;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+}
+
+.address, .phone {
+  color: #666;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.card-actions {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 0.8rem;
+}
+
+.contact-btn, .direction-btn, .emergency-btn {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  flex: 1;
+}
+
+.contact-btn {
+  background: #28a745;
+  color: white;
+}
+
+.direction-btn {
+  background: #17a2b8;
+  color: white;
+}
+
+.emergency-btn {
+  background: #dc3545;
+  color: white;
+  margin-left: 0.4rem;
+}
+
+.contact-btn:hover, .direction-btn:hover, .emergency-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* SOS Emergency Section */
+.sos-section {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.sos-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.sos-header h2 {
+  color: #dc3545;
+  font-size: 1.8rem;
+  margin-bottom: 0.4rem;
+}
+
+.sos-header p {
+  color: #666;
+  font-size: 1rem;
+}
+
+.sos-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.sos-btn {
+  padding: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.sos-btn.critical {
+  background: #dc3545;
+}
+
+.sos-btn.emergency {
+  background: #fd7e14;
+}
+
+.sos-btn.nearby {
+  background: #ffc107;
+  color: #333;
+}
+
+.sos-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.emergency-contacts h4 {
+  margin-bottom: 0.8rem;
+  text-align: center;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.contacts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.8rem;
+}
+
+.contact-card {
+  background: #f8f9fa;
+  padding: 0.8rem;
+  border-radius: 6px;
+  text-align: center;
+  border: 2px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+  border-color: #667eea;
+  transform: translateY(-2px);
+}
+
+.contact-card span {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.contact-card strong {
+  font-size: 1.1rem;
+  color: #dc3545;
+}
+
+/* Hospitals Tab */
+.hospitals-tab h2 {
+  text-align: center;
+  color: white;
+  margin-bottom: 1.5rem;
+  font-size: 2.2rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Footer */
+.app-footer {
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 1.5rem 1rem 0.8rem;
+  margin-top: auto;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-section h4 {
+  margin-bottom: 0.8rem;
+  color: #667eea;
+  font-size: 1.1rem;
+}
+
+.footer-section a {
+  display: block;
+  color: #ccc;
+  text-decoration: none;
+  margin-bottom: 0.4rem;
+  transition: color 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.footer-section a:hover {
+  color: #667eea;
+}
+
+/* Footer Hospital Login Styles */
+.hospital-login-btn {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 0.4rem;
+  transition: all 0.3s ease;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+.hospital-login-btn:hover {
+  background: #218838;
+  transform: translateY(-2px);
+}
+
+.hospital-register-btn {
+  background: transparent;
+  color: #667eea;
+  border: 2px solid #667eea;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 0.4rem;
+  transition: all 0.3s ease;
+  width: 100%;
+  font-size: 0.85rem;
+}
+
+.hospital-register-btn:hover {
+  background: #667eea;
+  color: white;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 0.8rem;
+  border-top: 1px solid #444;
+  color: #999;
+  font-size: 0.85rem;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  max-width: 380px;
+  width: 90%;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #666;
+}
+
+.modal-body {
+  text-align: center;
+}
+
+.modal-body p {
+  color: #666;
+  margin-bottom: 1.2rem;
+  font-size: 0.95rem;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1.2rem;
+  justify-content: center;
+}
+
+.auth-btn, .back-btn {
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.auth-btn {
+  background: #667eea;
+  color: white;
+}
+
+.back-btn {
+  background: #6c757d;
+  color: white;
+}
+
+.auth-btn:hover, .back-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .header-content {
+    flex-direction: row;
+    gap: 0.8rem;
+  }
+  
+  .nav-menu {
+    order: 0;
+    justify-content: center;
+  }
+  
+  .logo-section {
+    order: -1;
+  }
+  
+  .auth-section {
+    order: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    padding: 0.5rem 1rem;
+  }
+  
+  .logo {
+    font-size: 1.4rem;
+  }
+  
+  .tagline {
+    display: none;
+  }
+  
+  .nav-btn {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.75rem;
+    min-width: 60px;
+  }
+  
+  .login-btn, .register-btn {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.75rem;
+    min-width: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-content {
+    gap: 0.5rem;
+  }
+  
+  .logo {
+    font-size: 1.2rem;
+  }
+  
+  .nav-btn {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.7rem;
+    min-width: 50px;
+  }
+  
+  .login-btn, .register-btn {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.7rem;
+    min-width: 50px;
+  }
+  
+  .language-selector {
+    padding: 0.8rem;
+  }
+  
+  .language-selector label {
+    display: block;
+    margin-bottom: 0.4rem;
+    margin-right: 0;
+    font-size: 0.9rem;
+  }
+  
+  .contacts-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-section {
+    padding: 1rem 0;
+    margin-top: 0.5rem;
+  }
+}
+
+/* Tactical "Ant-Path" Glow Effect */
+.leaflet-ant-path {
+    stroke-dasharray: 10, 20;
+    animation: move 1s linear infinite;
+    stroke: #00f2fe; /* Glowing Cyan */
+}
+
+@keyframes move {
+    from { stroke-dashoffset: 30; }
+    to { stroke-dashoffset: 0; }
+}
+
+/* Radar Pulse for the User's Location */
+.user-radar-pulse {
+    width: 20px;
+    height: 20px;
+    background: #00f2fe;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00f2fe, 0 0 40px #00f2fe;
+    position: relative;
+}
+
+.user-radar-pulse::after {
+    content: '';
+    position: absolute;
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    border: 2px solid #00f2fe;
+    animation: radar-expand 2s ease-out infinite;
+}
+
+@keyframes radar-expand {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(4); opacity: 0; }
+}
